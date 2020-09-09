@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import "./App.css";
-const BASE_URL = 'https://api.nasa.gov/planetary/apod'
-const API_KEY = 'xQSx5gLJLPk9g6tY2bQKvFaCWuSBkkWLr692JA3a'
 import Header from "./Header"
 import Photo from "./Photo"
 import Description from "./Description"
+const BASE_URL = 'https://api.nasa.gov/planetary/apod'
+const API_KEY = 'xQSx5gLJLPk9g6tY2bQKvFaCWuSBkkWLr692JA3a'
+
 
 function App() {
   const [nasaData, setNasaData] = useState([])
