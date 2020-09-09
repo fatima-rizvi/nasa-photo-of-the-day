@@ -1,0 +1,1 @@
+// main-photo div to hold main photo

@@ -1,0 +1,1 @@
+// photo-description div to hold info about the daily photo
