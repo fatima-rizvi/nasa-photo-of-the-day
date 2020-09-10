@@ -42,7 +42,7 @@ function App() {
     <div className="App">
       <Header photoTitle = {nasaData.title}/>
       <Photo photoUrl = {nasaData.url} copyRight = {nasaData.copyright} date = {nasaData.date}/>
-      <Description />
+      <Description explanation = {nasaData.explanation}/>
       <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun <span role="img" aria-label='go!'>🚀</span>!
