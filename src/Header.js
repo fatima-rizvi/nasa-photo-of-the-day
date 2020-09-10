@@ -7,8 +7,8 @@ export default function Header(props) {
 
     return (
         <div className = 'header-section'>
-            <h1>NASA Photo of the Day</h1>
-            <h2>{photoTitle}</h2>
+            <h2>NASA Daily Photo</h2>
+            <h3>{photoTitle}</h3>
         </div>
     )
 }

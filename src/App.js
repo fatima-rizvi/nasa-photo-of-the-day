@@ -4,6 +4,7 @@ import "./App.css";
 import Header from "./Header"
 import Photo from "./Photo"
 import Description from "./Description"
+import NeoApp from "./NeoApp"
 const BASE_URL = 'https://api.nasa.gov/planetary/apod'
 const API_KEY = 'jypoNLYG1lQ8eTIAvyzrNJIfjYawtnPyhtjtGlut'
 //https://api.nasa.gov/planetary/apod?api_key=jypoNLYG1lQ8eTIAvyzrNJIfjYawtnPyhtjtGlut
@@ -40,9 +41,11 @@ function App() {
 
   return (
     <div className="App">
+      <h1>NASA API's</h1>
       <Header photoTitle = {nasaData.title}/>
       <Photo photoUrl = {nasaData.url} copyRight = {nasaData.copyright} date = {nasaData.date}/>
       <Description explanation = {nasaData.explanation}/>
+      <NeoApp />
     </div>
   );
 }
