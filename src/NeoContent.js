@@ -1,6 +1,11 @@
 //neo-content-section div to hold page title
 //Import react
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components'
+
+const WhiteText = styled.div`
+    color: ${pr => pr.theme.white};
+`
 
 export default function NeoContent(props) {
     const { allAstData, startDate } = props
@@ -12,9 +17,9 @@ export default function NeoContent(props) {
     // console.log(Object.getOwnPropertyNames(allNeos));
 
     return (
-        <div className = 'neo-content-section'>
+        <WhiteText className = 'neo-content-section'>
             <h4>Number of Nearby Asteroids: {allAstData.element_count}</h4>
 
-        </div>
+        </WhiteText>
     )
 }

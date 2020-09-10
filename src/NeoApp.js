@@ -7,13 +7,13 @@ import NeoContent from './NeoContent'
 const BASE_URL = 'https://api.nasa.gov/neo/rest/v1/feed'
 // //For now make start and end dates constant, but figure out how to change them
 const START_DATE = '2015-09-07'
-const API_KEY = 'DEMO_KEY'
-//(`${BASE_URL}?start_date=${START_DATE}&api_key=${API_KEY}`)
+const API_KEY = 'jypoNLYG1lQ8eTIAvyzrNJIfjYawtnPyhtjtGlut'
+//(`${BASE_URL}?start_date=${START_DATE}&end_date=${START_DATE}&api_key=${API_KEY}`)
 
 export default function NeoApp () {
     const [astData, setAstData] = useState([])
     useEffect(() => {
-        axios.get(`${BASE_URL}?start_date=${START_DATE}&api_key=${API_KEY}`)
+        axios.get(`${BASE_URL}?start_date=${START_DATE}&end_date=${START_DATE}&api_key=${API_KEY}`)
           .then(res => {
               console.log(res)
               setAstData(res.data)
@@ -25,7 +25,6 @@ export default function NeoApp () {
     }, [])//You'll want to change the empty array to hold the start date and end date once you figure out how to manipulate those
     return (
         <div>
-            <h3>Hi, this will be the location of the NeoApp component</h3>
             <NeoHeader />
             <NeoContent allAstData = {astData} startDate = {START_DATE}/>
         </div>
