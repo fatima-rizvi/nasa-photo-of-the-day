@@ -20,19 +20,22 @@ const StyledImg = styled.img`
         animation: ${kf} 1s forwards;
     }
 `
-const StyledPhotoSec = styled.div`
-    background-color: ${pr => pr.theme.grey};
-    color: ${pr => pr.theme.white};
+
+const StyledDetails = styled.div`
+    display: flex;
+    justify-content: space-around;
 `
 
 export default function Photo(props) {
     const { photoUrl, copyRight, date } = props
 
     return (
-        <StyledPhotoSec className = 'main-photo'>
+        <div className = 'main-photo'>
             <StyledImg src={photoUrl} alt="NASA's Daily Photo"/>
-            <h6>Copyright: {copyRight}</h6>
-            <h6>Date: {date}</h6>
-        </StyledPhotoSec>
+            <StyledDetails className = 'photo-details'>
+                <h6>Copyright: {copyRight}</h6>
+                <h6>Date: {date}</h6>
+            </StyledDetails>
+        </div>
     )
 }
