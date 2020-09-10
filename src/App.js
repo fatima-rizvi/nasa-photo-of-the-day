@@ -41,7 +41,7 @@ function App() {
   return (
     <div className="App">
       <Header photoTitle = {nasaData.title}/>
-      <Photo />
+      <Photo photoUrl = {nasaData.url}/>
       <Description />
       <p>
         Read through the instructions in the README.md file to build your NASA

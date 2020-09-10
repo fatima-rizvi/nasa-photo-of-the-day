@@ -1,12 +1,12 @@
 // main-photo div to hold main photo
 import React from 'react';
 
-export default function Photo() {
-
+export default function Photo(props) {
+    const {photoUrl} = props
 
     return (
         <div className = 'main-photo'>
-            <p>There will be a photo here</p>
+            <img src={photoUrl} alt="NASA's Daily Photo"/>
         </div>
     )
 }
