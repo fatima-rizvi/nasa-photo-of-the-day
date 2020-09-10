@@ -2,6 +2,7 @@
 //Link: https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=DEMO_KEY
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import NeoHeader from './NeoHeader'
 const BASE_URL = 'https://api.nasa.gov/neo/rest/v1/feed'
 // //For now make start and end dates constant, but figure out how to change them
 const START_DATE = '2015-09-07'
@@ -25,8 +26,7 @@ export default function NeoApp () {
     return (
         <div>
             <h3>Hi, this will be the location of the NeoApp component</h3>
-            
-
+            <NeoHeader />
         </div>
     )
 }
