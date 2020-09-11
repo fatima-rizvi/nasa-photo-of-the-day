@@ -8,11 +8,11 @@ const StyledHeader = styled.div`
     color: ${pr => pr.theme.white};
 `
 
-export default function NeoHeader() {
-
+export default function NeoHeader(props) {
+    const { date } = props
     return (
         <StyledHeader className = 'neo-header-section'>
-            <h2>Asteroids Near Earth Today</h2>
+            <h2>Asteroids Near Earth on {date}</h2>
         </StyledHeader>
     )
 }

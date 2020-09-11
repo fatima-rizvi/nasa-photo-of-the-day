@@ -8,7 +8,7 @@ const WhiteText = styled.div`
 `
 
 export default function NeoContent(props) {
-    const { allAstData, startDate } = props
+    const { allAstData, date } = props
     console.log(allAstData);
     // const [asteroids, setAsteroids] = useState(allAstData)
     // console.log(asteroids);

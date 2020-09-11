@@ -6,14 +6,17 @@ import NeoHeader from './NeoHeader'
 import NeoContent from './NeoContent'
 const BASE_URL = 'https://api.nasa.gov/neo/rest/v1/feed'
 // //For now make start and end dates constant, but figure out how to change them
-const START_DATE = '2015-09-07'
+const DATE = '2015-09-07'
 const API_KEY = 'jypoNLYG1lQ8eTIAvyzrNJIfjYawtnPyhtjtGlut'
 //(`${BASE_URL}?start_date=${START_DATE}&end_date=${START_DATE}&api_key=${API_KEY}`)
 
+//(`https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-07&api_key=jypoNLYG1lQ8eTIAvyzrNJIfjYawtnPyhtjtGlut`)
+
 export default function NeoApp () {
     const [astData, setAstData] = useState([])
+    const [date, setDate] = useState(DATE)
     useEffect(() => {
-        axios.get(`${BASE_URL}?start_date=${START_DATE}&end_date=${START_DATE}&api_key=${API_KEY}`)
+        axios.get(`${BASE_URL}?start_date=${date}&end_date=${date}&api_key=${API_KEY}`)
           .then(res => {
               console.log(res)
               setAstData(res.data)
@@ -22,11 +25,20 @@ export default function NeoApp () {
           .catch(err => {
               console.log("ERROR");
           })
-    }, [])//You'll want to change the empty array to hold the start date and end date once you figure out how to manipulate those
+    }, [{date}])//You'll want to change the empty array to hold the start date and end date once you figure out how to manipulate those
     return (
         <div>
-            <NeoHeader />
-            <NeoContent allAstData = {astData} startDate = {START_DATE}/>
+            <NeoHeader date = {date} />
+            <form>
+                <div>
+                    <label for='neoDate'>Choose a date: </label>
+                    <input type="text" id="neoDate" name="name" placeholder="YYYY-MM-DD"/>
+                </div>
+                <div>
+                    <button onClick={() => setDate(document.getElementById('neoDate'))}>Submit</button>
+                </div>
+            </form>
+            <NeoContent allAstData = {astData} date = {date}/>
         </div>
     )
 }
